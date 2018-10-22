@@ -1,0 +1,13 @@
+{
+    "development": {
+        "mail": {
+            "password": "express-demo_password"
+        }
+    },
+    
+    "production": {
+        "mail": {
+            "password": "express-demo_password"
+        }
+    }
+}
