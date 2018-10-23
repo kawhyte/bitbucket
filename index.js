@@ -6,7 +6,7 @@ const express = require ('express');
 const helmet = require ('helmet');
 const Joi = require ('joi');
 const logger = require('./middleware/logger')
-//const courses = require('./routes/courses');
+const courses = require('./routes/courses');
 const home = require('./routes/home');
 const app  = express();
 
@@ -28,12 +28,12 @@ dbDebugger('Connected to the database');
 
 app.use(express.json());
 app.use(helmet());
-//app.use('/api/courses', courses);
-//app.use('/', home);
+app.use('/api/courses', courses);
+app.use('/', home);
 app.use(express.urlencoded({extended: true}));
 app.use(express.static('public'))
 
-//app.use(logger);
+app.use(logger);
 
 
 
